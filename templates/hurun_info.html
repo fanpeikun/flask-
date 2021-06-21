@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>电影信息展示</title>
+    <link rel=stylesheet type=text/css href="/static/style.css">
+</head>
+<body>
+
+<h1>独角兽湾区对比信息展示</h1>
+
+
+<!-- <h2>动画列表：</h2>
+ --><!-- jinja2 的方法 -->
+<!-- {{ Animation_data|safe }}
+
+<h2>喜剧列表：</h2>
+{{ Drama_data|safe }} -->
+
+
+<form class="form-inline" method="POST" action="{{ url_for('test') }}">
+  <div class="form-group">
+    <div class="input-group">
+        <span class="input-group-addon">请选择</span>
+            <select name="comp_select" class="selectpicker form-control">
+              {% for o in data %}
+              {% for k,v in o.items() %}
+              <!-- <option value="{{ o.name }}">{{ o.name }}</option> -->
+              <option value={{v}}>{{k}}</option>
+              {% endfor %}
+              {% endfor %}
+            </select>
+    </div>
+    <button type="submit" class="btn btn-default">确定</button>
+  </div>
+</form>
+<h2>旧金山湾区独角兽展示前十位数据</h2>
+{{ df_旧金山湾区|safe }}
+<h2>粤港澳大湾区独角兽展示前十位数据</h2>
+{{ df_粤港澳大湾区|safe }}
+<!-- {{tu|safe}}
+{{tu2|safe}}
+{{tu4|safe}}
+{{df_对比_美国|safe}}
+{{df_js|safe}} -->
+<!-- <h2 style="color:#FFF68F">戏剧列表：</h2>
+{{ Drama_data|safe }}
+<h2 style="color: #CAFF70">喜剧列表</h2>
+{{ comedy_data|safe }}
+<h2 style="color: #EE9A00">冒险篇列表：</h2>
+{{ adventure_data|safe }}
+<h2 style="color: #FFE1FF">爱情篇列表</h2>
+{{ romance_data|safe }} -->
+</body>
+

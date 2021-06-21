@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>独角兽公司（粤港澳湾区VS旧金山湾区）</title>
+    <link rel=stylesheet type=text/css href="/static/style.css">
+</head>
+<body>
+{% if select=='a1' %}
+<h2>粤港澳大湾区详情</h2>
+{{ df_粤港澳大湾区|safe }}
+{% endif %}
+{% if select=='a2' %}
+<h2 style="color:#FFF68F">旧金山湾区详情</h2>
+{{ df_旧金山湾区|safe }}
+
+{% endif %}
+{% if select=='a' %}
+<h2 style="color: #CAFF70">湾区指标对比</h2>
+{{tu|safe}}
+{{dfall|safe}}
+{% endif %}
+{% if select=='b' %}
+<h2 style="color:#EE9A00">湾区各行业对比</h2>
+{{tu2|safe}}
+{{df_粤港澳产业估值合计|safe}}
+{{tu3|safe}}
+{{df_旧金山湾区产业估值合计|safe}}
+{% endif %}
+{% if select=='c' %}
+<h2 style="color: #FFE1FF">湾区共有行业对比</h2>
+<h3>共有的行业</h3>>
+{{ gongyou|safe }}
+{{tu4|safe}}
+{{tu5|safe}}
+{% endif %}
+{% if select=='d' %}
+<h2 style="color: #FFE1FF">旧金山湾区投资机构</h2>
+<h3>共有的行业</h3>>
+{{df_js1|safe}}
+{% endif %}
+{% if select=='e' %}
+<h2 style="color: #FFE1FF">粤港澳湾区投资机构</h2>
+<h3>共有的行业</h3>>
+{{df_js2|safe}}
+{% endif %}
+</body>
+</html>
